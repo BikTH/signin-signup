@@ -16,8 +16,10 @@
                             <img src="<?= assets('img/imglogin.svg') ?>" class="img-fluid" alt="login img">
                         </div>
                         <div class="col-lg-6 p-5 text-secondary">
-                            <div class="justify-content-between"><span>Sign-in</span><span>or <a href="">create an acount</a></span></div>
-                            
+                            <div class="justify-content-between d-flex"><span class="fw-bold">Sign-in</span><span>or <a href="">create an acount</a></span></div>
+                            <div class="d-grid gap-2">
+                                <a href="" class=" rounded-pill btn btn-outline-primary"><span class="fw-bold">Sign up</span></a>
+                            </div>
                             <form action="" method="post" enctype="multipart/form-data"   class="row needs-validation" class="needs-validation" novalidate>
                                 <!-- <h2 class="form-header text-primary justify-content-left"> Welcome Back </h2> -->
                                 <div class="form-floating mb-3">
