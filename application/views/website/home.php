@@ -5,16 +5,19 @@
         <div class="card-body p-0">
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1 ">
                 <div class="card bg-transparent text-sendary o-hidden border-0 my-5">
-                    <h2 class="form-header text-primary text-center"> Welcome Back </h2>
+                    <!--<h2 class="form-header text-primary text-center"> Welcome Back </h2>
                     <div class=" text-center alert alert-danger alert-dismissible fade show " role="alert">
+                        a
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    </div>-->
                     <div class="row justify-content-center d-flex align-items-center ">
                         <!-- <div class="col-lg-6 d-lg-block p-5 text-center d-none "> -->
                         <div class="col-lg-6 d-lg-block p-5 text-center">
                             <img src="<?= assets('img/imglogin.svg') ?>" class="img-fluid" alt="login img">
                         </div>
                         <div class="col-lg-6 p-5 text-secondary">
+                            <div class="justify-content-between"><span>Sign-in</span><span>or <a href="">create an acount</a></span></div>
+                            
                             <form action="" method="post" enctype="multipart/form-data"   class="row needs-validation" class="needs-validation" novalidate>
                                 <!-- <h2 class="form-header text-primary justify-content-left"> Welcome Back </h2> -->
                                 <div class="form-floating mb-3">

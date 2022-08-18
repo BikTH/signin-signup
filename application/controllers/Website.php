@@ -49,7 +49,7 @@ class Website extends Flamarya {
 	
 	
 	private function meta($pageID){
-		$metas = array("services","quote" , "about", "about-team", "contact", "services-inhumation" , "services-car" , "services-coffin" , "services-deco" , "services-flowers" , "services-exhumation" , "services-prints" , "services-repatriation", "legal-privacy", "legal-terms" ) ; 
+		$metas = array("services" ) ; 
 
 		if( array_search($pageID, $metas) > -1 ){
 			$image = $this->getSEOImage($pageID);
@@ -69,7 +69,8 @@ class Website extends Flamarya {
 	
 	private function loadpage($pageDIR, $meta){
 		$this->load->view("website/header/head", array("meta"=> $meta, "self"=> $this));
-		$this->load->view("website/header/header", array("active"=> $this->activePage, "self"=> $this));
+		//$this->load->view("website/header/header", array("active"=> $this->activePage, "self"=> $this));
+		$this->load->view("website/header/afterheader", array("active"=> $this->activePage, "self"=> $this));
 		
 		$this->load->view("website/".$pageDIR, array("self"=> $this));
 		
