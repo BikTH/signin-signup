@@ -26,8 +26,8 @@
 }
 
 @font-face {
-    font-family: 'circular';
-    src:  url('../../fonts/circular/CircularStd-Book.woff') format('woff');
+    font-family: 'atlas';
+    src:  url('../../fonts/AtlasGrotesk-Regular-Web-vflg7ta4-.woff') format('woff');
     font-weight: 400;
 }
 
@@ -37,7 +37,7 @@
     font-weight: 700;
 }
 
-body{font-weight: 400;font-family: "circular", sans-serif; height: 100vh;  color: var(--log-black);}
+body{font-weight: 400;font-family: "atlas", sans-serif; height: 100vh;  color: var(--log-black);}
 body#website {padding-top: 76px;}
 body#app {padding-top: 60px;}
 

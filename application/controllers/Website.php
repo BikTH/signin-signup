@@ -21,6 +21,7 @@ class Website extends Flamarya {
 	
 	
 	public function routepage($a = "", $b = null, $c = null){
+		echo $a ; die;
 		$b = !is_null($b) ? "/".$b : "";
 		$c = !is_null($c) ? "/".$c : "";
 		
@@ -49,7 +50,7 @@ class Website extends Flamarya {
 
 	
 	private function meta($pageID){
-		$metas = array("services" ) ; 
+		$metas = array("signup", "main", "two-factor" ) ; 
 
 		if( array_search($pageID, $metas) > -1 ){
 			$image = $this->getSEOImage($pageID);

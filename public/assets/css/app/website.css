@@ -12,8 +12,20 @@
     #navigation_bottom_menu > .main_app_menu{width: 100%;}
 }
 
+/*----------------------------LOGIN---------------------------------------*/
 a.btn._black {border-radius: 0; border: 2.5px solid transparent; border-radius: 0; font-size: 16px; border-color: black; }
-a.btn._black :hover {background: rgba(255,255,255,.75)}
+.btn._black:hover {color: #212529;background: rgba(0,0,0,0.08);}
+
+.hr-label{position: relative; clear: both; overflow: hidden;}
+.hr-label::before, .hr-label::after{content: ''; position: relative; width: 50%; background-color: rgba(0,0,0,.2); display: inline-block; height: 1px; vertical-align: middle;}
+.hr-label::after{left: .5rem ; margin-right: -50%;}
+.hr-label::before{right: .5rem ; margin-left: -50%;}
+
+.form-label {margin-bottom: 0rem !important;}
+.form-check-input:checked {background-color: gray!important; border-color: gray !important;}
+
+/*-----------------------------------------------------------------------------*/
+
 
 .bg-log1 {background-color: var(--log-color) !important; }
 .text-log1{color: var(--log-color) !important;}
