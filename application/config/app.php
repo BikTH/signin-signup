@@ -1,11 +1,12 @@
 <?php
 
-$config["app"] = "Flamarya";
+$config["app"] = "signin";
 
 
 
 
-$config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
+//$config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
+$config['base_url'] = 'https://signin-signup.dev/';
 $config["default_timezone"] = "Africa/Douala";
 
 
