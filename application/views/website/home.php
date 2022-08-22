@@ -18,7 +18,7 @@
                         <div class="col-lg-6 p-5 text-secondary">
                             <div class="justify-content-between d-flex"><span class="fw-bold">Sign-in</span><span>or <a href="">create an acount</a></span></div>
                             <div class="d-grid gap-2">
-                                <a href="" class=" rounded-pill btn btn-outline-primary"><span class="fw-bold">Sign up</span></a>
+                                <a href="" class="row btn btn-primary"><span class="fw-bold col-2 text-start"><i class="bi bi-google"></i></span><span class="fw-bold col-10 text-center">Sign up</span></a>
                             </div>
                             <form action="" method="post" enctype="multipart/form-data"   class="row needs-validation" class="needs-validation" novalidate>
                                 <!-- <h2 class="form-header text-primary justify-content-left"> Welcome Back </h2> -->
@@ -37,7 +37,7 @@
                                     <a href="#" class="text-decoration-none">Cookie Policy.</a>
                                 </small>
                                 <div class="d-grid gap-2 mt-3">
-                                    <button type="submit" class="btn rounded-pill btn-primary">
+                                    <button type="submit" class="btn  btn-primary">
                                         <span class="fw-bold">Login</span>
                                     </button>
                                 </div>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="d-grid gap-2">
-                                <a href="" class=" rounded-pill btn btn-outline-primary">
+                                <a href="" class="  btn btn-outline-primary">
                                     <span class="fw-bold">Sign up</span>
                                 </a>
                             </div>
