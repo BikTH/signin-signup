@@ -16,7 +16,7 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
 
     <link rel="icon" type="image/png" href="/public/favicon.png?c" />
 
-    <title><?= $title; ?> | KOKI Anaïs Geneviève</title>
+    <title><?= $title; ?> | Signin-Signup</title>
     <meta name="title" content="<?= $title; ?>">
     <meta name="description" content="<?= $description; ?>">
     <meta property="og:type" content="website">
@@ -99,5 +99,5 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
 </head>
 
 <body id="website">
-    <div class="preloader_"><span class="isloading-wrapper" style="top: 223.5px;"><div class="centered"><span class="_loader"></span></div></span></div>
-    <script type="text/javascript">$(window).on("load resize", function() {var w__ = parseInt($(this).outerWidth(), 10);if (w__ < 768) {window.isMobile = true;} else {window.isMobile = false;}});$(document).ready(function() {setTimeout(function() {$(".preloader_").fadeOut(100);$("body").css("overflow", "auto");}, 1000);});</script>
+    <!--<div class="preloader_"><span class="isloading-wrapper" style="top: 223.5px;"><div class="centered"><span class="_loader"></span></div></span></div>
+    <script type="text/javascript">$(window).on("load resize", function() {var w__ = parseInt($(this).outerWidth(), 10);if (w__ < 768) {window.isMobile = true;} else {window.isMobile = false;}});$(document).ready(function() {setTimeout(function() {$(".preloader_").fadeOut(100);$("body").css("overflow", "auto");}, 1000);});</script>-->
