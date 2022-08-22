@@ -11,5 +11,8 @@ $lang['description-signup'] = "page d'inscription";
 $lang['title-main'] = "Acceuil";
 $lang['description-main'] = "page d'acceuil";
 
-$lang['title-two-factor'] = "Authentification";
-$lang['description-two-factor'] = "page d'authentification à deux facteur";
+$lang['title-twofactor'] = "Authentification";
+$lang['description-twofactor'] = "page d'authentification à deux facteur";
+
+$lang['title-password'] = "Mot de passe oublié";
+$lang['description-password'] = "page de récupération de mot de passe";

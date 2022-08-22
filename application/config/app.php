@@ -5,8 +5,8 @@ $config["app"] = "signin";
 
 
 
-$config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
-//$config['base_url'] = 'https://signin-signup.dev/';
+//$config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
+$config['base_url'] = 'https://signin-signup.dev/';
 $config["default_timezone"] = "Africa/Douala";
 
 
@@ -56,7 +56,7 @@ $config["google-recaptcha-secret-key"] = "";
 
 
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'flamaryasecure';
+$config['sess_cookie_name'] = 'loginsecure';
 $config['sess_expiration'] = 3600;
 $config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_match_ip'] = FALSE;

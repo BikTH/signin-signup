@@ -50,7 +50,7 @@ class Website extends Flamarya {
 
 	
 	private function meta($pageID){
-		$metas = array("signup", "main", "two-factor" ) ; 
+		$metas = array("signup", "main", "twofactor", "password" ) ;
 
 		if( array_search($pageID, $metas) > -1 ){
 			$image = $this->getSEOImage($pageID);
