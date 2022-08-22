@@ -46,7 +46,7 @@ class Website extends Flamarya {
 		$this->loadpage("pages/".$dir, $this->meta($currentPage) );
 	}
 	
-	
+
 	
 	private function meta($pageID){
 		$metas = array("services" ) ; 
@@ -173,4 +173,16 @@ class Website extends Flamarya {
 		$data = $this->Base->get("testimonial");
 		return $data ? $data : null;
 	}
+
+
+	
+
+
+
+
+
+
+
+
+
 }
