@@ -48,12 +48,12 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
     <link rel="stylesheet" href="<?= assets("css/app/core.css") . "?" . time(); ?>" />
     <link rel="stylesheet" href="<?= assets("css/app/website.css") . "?" . time(); ?>" />
 
-    <link rel="stylesheet" href="<?= assets("css/owlcarousel/owl.carousel.min.css"); ?>" />
+    <!--<link rel="stylesheet" href="<?= assets("css/owlcarousel/owl.carousel.min.css"); ?>" />
     <link rel="stylesheet" href="<?= assets("css/owlcarousel/owl.theme.default.min.css"); ?>" />
 
     <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.5.0/css/lightgallery.css" />
     <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.5.0/css/lg-zoom.css" />
-    <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.5.0/css/lg-thumbnail.css" />
+    <link rel="stylesheet" href="https://unpkg.com/lightgallery@2.5.0/css/lg-thumbnail.css" />-->
 
     <link rel="stylesheet" href="<?= assets("css/confirm.css"); ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -63,7 +63,7 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
 
     <meta name="keywords" content="" />
     <meta name="author" content="Rupasan" />
-    <script type='application/ld+json'>
+    <!--<script type='application/ld+json'>
         {
             "@context": "http://www.schema.org",
             "@type": "CV / Blog / Portfolio",
@@ -90,7 +90,7 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
             "openingHours": "Mo 08:00-17:00 Tu 08:00-17:00 We 08:00-17:00 Th 08:00-17:00 Fr 08:00-17:00 Sa 08:00-15:00",
             "telephone": "+237656115610"
         }
-    </script>
+    </script>-->
     <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-D79QFRC787"></script>-->
     <!--<script>
         window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments);}
