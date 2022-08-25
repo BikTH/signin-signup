@@ -188,7 +188,7 @@ class Website extends Login {
 				}else{$this->error_redirect('passwordError', 'signup' );}
 				
 			}else{$action == 'signup' ? $this->error_redirect('emailError', 'signup' ) : $this->error_redirect('error', '' ) ;}
-		}else{$action == 'signup' ? $this->error_redirect('emailError', 'signup' ) : $this->error_redirect('error2', '' ) ;}
+		}else{$action == 'signup' ? $this->error_redirect('emailError', 'signup' ) : $this->error_redirect('error', '' ) ;}
 
 		if ($action == "signup") {
 			if(is_null(_post('name')) || is_null(_post('consent'))){
