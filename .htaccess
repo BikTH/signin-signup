@@ -1,0 +1,42 @@
+SetEnv PHP_VER 5
+
+
+#   Empêche la visualisation de l'arborescence, n'a rien à voir avec le masquage du « index.php ».
+Options -Indexes
+
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+
+#   Active le module de réécriture d'URL.
+RewriteEngine on
+
+
+#   Toutes les URL qui ne correspondent pas à ces masques sont réécrites.
+RewriteCond $1 !^(index\.php|public/|uploads/)
+
+
+<FilesMatch "\.(ini|psd|log|ini)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+
+
+# RedirectMatch 403 ^/backoffice/?$
+
+
+# #
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} !^www\.deriafrica\.org [NC]
+# RewriteRule ^(.*)$ https://www.deriafrica.org/$1 [L,R=301]
+
+
+
+# Supprimons index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?/$1[L]
+
