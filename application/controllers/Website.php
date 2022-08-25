@@ -221,7 +221,8 @@ class Website extends Login {
 		$user = $this->Base->getthis('users', array("email"=> $email, "password"=> $password));
 		if ($user){
 			$this->session->set_userdata( array("user"=> $user ) );
-			$this->user = ( object ) $this->session->userdata('user');
+			$user = ( object) $this->session->userdata("user");
+			$this->userinfo = ( object ) $this->session->userdata('user');
 			$this->Base->updateData(array("lastseen"=> now()), array("id"=> $this->user->id), "users");
 			redirect("/main");
 			return true;

@@ -31,10 +31,10 @@ $config["support_whatsapp"] = "https://wa.me/237670505817";
 
 /* DATABASE INFOS */
 
-$config["database"] = "openxtech";
-$config["host"] = "localhost";
-$config["username"] = "oxt";
-$config["password"] = "HelloWorld";
+$config["database"] = "sql5515006";
+$config["host"] = "sql5.freemysqlhosting.net";
+$config["username"] = "sql5515006";
+$config["password"] = "9WE3ImQwq8";
 
 
 

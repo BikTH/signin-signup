@@ -38,7 +38,7 @@
 }
 
 body{font-weight: 400;font-family: "atlas", sans-serif; height: 100vh;  color: var(--log-black);}
-body#website {padding-top: 76px;}
+/*body#website {padding-top: 76px;}*/
 body#app {padding-top: 60px;}
 
 tbody, td, tfoot, th, thead, tr { white-space: nowrap; vertical-align: middle; }
