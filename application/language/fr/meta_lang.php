@@ -14,5 +14,6 @@ $lang['description-main'] = "page d'acceuil";
 $lang['title-twofactor'] = "Authentification";
 $lang['description-twofactor'] = "page d'authentification à deux facteur";
 
-$lang['title-password'] = "Mot de passe oublié";
-$lang['description-password'] = "page de récupération de mot de passe";
+$lang['title-resetPassword'] = "Mot de passe oublié";
+$lang['description-resetPassword'] = "page de récupération de mot de passe";
+

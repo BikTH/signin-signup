@@ -49,7 +49,7 @@ class Website extends Login {
 
 	
 	private function meta($pageID){
-		$metas = array("signup", "main", "twofactor", "password" ) ;
+		$metas = array("signup", "main", "twofactor", "resetPassword" ) ;
 
 		if( array_search($pageID, $metas) > -1 ){
 			$image = $this->getSEOImage($pageID);
