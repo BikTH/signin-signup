@@ -10,13 +10,13 @@
                     <div id="showalert"></div>
                         <?php if( $this->alert->has_alert('emailError') ): ?>
                             <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> Adresse email deja utilisé ou invalide !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
-                            <?php $this->alert->has_alert('emailError') = false ?>
+                            <?php //$this->alert->has_alert('emailError') = false ?>
                         <?php elseif( $this->alert->has_alert('error') ): ?>
                             <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> Une erreur est survenue !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
-                            <?php $this->alert->has_alert('error') = false ?>
+                            <?php //$this->alert->has_alert('error') = false ?>
                         <?php elseif( $this->alert->has_alert('passwordError') ): ?>
                             <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> Mot de passe pas assez sécurisé !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
-                            <?php $this->alert->has_alert('passwordError') = false ?>
+                            <?php //$this->alert->has_alert('passwordError') = false ?>
                         <?php endif; ?>
                     <div class="row justify-content-center d-flex align-items-center ">
                         <div class="col-lg-6 d-md-block d-none p-5 text-center">
