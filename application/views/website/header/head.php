@@ -14,7 +14,7 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" href="/public/favicon.png?c" />
+    <link rel="icon" type="image/png" href="/public/favicon.png" />
 
     <title><?= $title; ?> | Signin-Signup</title>
     <meta name="title" content="<?= $title; ?>">
