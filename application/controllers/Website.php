@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Website extends Flamarya {
+class Website extends Login {
 	
 	protected $activePage = null;
 	
@@ -21,7 +21,6 @@ class Website extends Flamarya {
 	
 	
 	public function routepage($a = "", $b = null, $c = null){
-		echo $a ; die;
 		$b = !is_null($b) ? "/".$b : "";
 		$c = !is_null($c) ? "/".$c : "";
 		
@@ -92,8 +91,8 @@ class Website extends Flamarya {
 	
 	
 	
-	public function call($func = null){
-		return $this->$func();
+	public function call($func = null, $b = null){
+		return !is_null($b) ? $this->$func($b) : $this->$func();
 	}
 	
 	
@@ -174,7 +173,74 @@ class Website extends Flamarya {
 		$data = $this->Base->get("testimonial");
 		return $data ? $data : null;
 	}
+ 
 
+	public function user($action = ""){
+		if(is_null(_post('email')) || is_null(_post('password')) ){
+			$action == 'signup' ? $this->error_redirect('error', "signup" ) : $this->error_redirect('error', "" );
+		}elseif(filter_var(_post('email'), FILTER_VALIDATE_EMAIL)){
+			$test = $this->Base->getthis('users', array('email'=>_post('email')));
+			if(!$test || $action == 'signin'){
+				if($this->validpassword(_post("password"))){
+					$data = array("email"=> _post("email"), 
+						"password"=> md5(_post("password")),
+					);
+				}else{$this->error_redirect('passwordError', 'signup' );}
+				
+			}else{$action == 'signup' ? $this->error_redirect('emailError', 'signup' ) : $this->error_redirect('error', '' ) ;}
+		}else{$action == 'signup' ? $this->error_redirect('emailError', 'signup' ) : $this->error_redirect('error2', '' ) ;}
+
+		if ($action == "signup") {
+			if(is_null(_post('name')) || is_null(_post('consent'))){
+				$this->error_redirect('error', "signup" );
+			}else{
+				$data["name"]= trim(_post("name")). " ". trim(_post("lastname"));
+				$data["uid"]= $this->get_uid();
+				$data["authentication"]= false;
+				$data["online"]= false;
+				$data["status"]= true;
+				$data["dateof"]= now();
+				$this->Base->insertdata("users", $data);
+				$this->login($data['email'], $data['password']) ? $this->alert->set('success', true) : $this->error_redirect('error') ; 
+			}
+			
+		}
+		
+		if ($action == "signin") {
+			$this->login($data['email'], $data['password']) ? $this->alert->set('success', true)  : $this->error_redirect('error') ;
+		}
+	}
+
+	public function logout(){
+		$this->session->unset_userdata('user');
+		redirect("/");
+	}
+
+	public function login($email, $password) {
+		$this->session->unset_userdata('user');
+		$user = $this->Base->getthis('users', array("email"=> $email, "password"=> $password));
+		if ($user){
+			$this->session->set_userdata( array("user"=> $user ) );
+			$this->user = ( object ) $this->session->userdata('user');
+			$this->Base->updateData(array("lastseen"=> now()), array("id"=> $this->user->id), "users");
+			redirect("/main");
+			return true;
+		}else {
+			return false;
+		}
+
+	}
+
+	public function error_redirect($error, $redirect = ''){
+		$this->alert->set($error, true);
+		$redirect = '' ? redirect("/") : redirect("/".$redirect);
+	}
+
+	public function validpassword($password) {
+		if (!preg_match_all('$\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$', $password))
+			return FALSE;
+		return TRUE;
+	}
 
 
 

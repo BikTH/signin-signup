@@ -3,7 +3,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends MaryFuneral
+class Dashboard extends Login
 {
 
 
@@ -369,4 +369,45 @@ class Dashboard extends MaryFuneral
             }
         }
     }
+
+
+    public function user($action = ""){
+		$data = array("name"=> trim(_post("name")) . trim(_post("lastname")), 
+				"email"=> _post("email"), 
+				"password"=> md5(_post("password")),
+				"uid"=> $this->get_uid(),
+				"authentication"=> false,
+				"online"=> false,
+				"status"=> true,
+				"dateof"=> now(),
+			);
+		if ($action == "signup") {
+			$test = $this->Base->getthis('users', array('email'=>$data['email']));
+			if($test){
+				$this->Base->insertdata("users", $data);
+				$this->login($data['email'], $data['password']) ? _echo(array(array('status'=>true))) : _echo(array("status"=> false, "error"=> "login-failed")) ;
+			}else{
+				return _echo(array("status"=> false, "error"=> "email-use"));
+			}
+
+		}if ($action == "signin") {
+			
+		}
+	}
+
+	
+
+	public function login($email, $password) {
+		$this->session->unset_userdata('user');
+		$user = $this->Base->getthis('users', array("email"=> $email, "password"=> $password));
+		if ($user){
+			$updatePIN = $this->Base->updateData(array("lastseen"=> now()), array("id"=> $this->user->id), "users");
+			$this->session->set_userdata( array("user"=> $user ) );
+            redirect ('https://signin.dev/');
+			//$this->loadpage("pages/main", array("title"=> lang("title-main") , "description"=> lang("description-main")));
+		}else {
+			return false;
+		}
+
+	}
 }

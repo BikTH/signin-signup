@@ -6,7 +6,7 @@ $config["app"] = "signin";
 
 
 //$config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
-$config['base_url'] = 'https://signin-signup.dev/';
+$config['base_url'] = 'https://signin.dev/';
 $config["default_timezone"] = "Africa/Douala";
 
 
@@ -31,10 +31,10 @@ $config["support_whatsapp"] = "https://wa.me/237670505817";
 
 /* DATABASE INFOS */
 
-$config["database"] = "sql8513258";
-$config["host"] = "sql8.freesqldatabase.com";
-$config["username"] = "sql8513258";
-$config["password"] = "58niprmmN9";
+$config["database"] = "openxtech";
+$config["host"] = "localhost";
+$config["username"] = "oxt";
+$config["password"] = "HelloWorld";
 
 
 

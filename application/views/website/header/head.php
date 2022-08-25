@@ -44,6 +44,7 @@ $imageSEO = isset($meta) && is_array($meta) ? $meta["image"] : false;
     <meta name="color-scheme" content="light dark">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?= assets("css/app/core.css") . "?" . time(); ?>" />
     <link rel="stylesheet" href="<?= assets("css/app/website.css") . "?" . time(); ?>" />

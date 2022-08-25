@@ -5,6 +5,13 @@
         <div class="card-body p-4">
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1 ">
                 <div class="card bg-transparent text-sendary o-hidden border-0 my-5">
+                        <?php if( $this->alert->has_alert('error2') ): ?>
+                            <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> Adresse email ou mot de passe invalide !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                        <?php elseif( $this->alert->has_alert('error') ): ?>
+                            <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> AAAAAAAa<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                        <?php elseif( $this->alert->has_alert('passwordError') ): ?>
+                            <div class="alert alert-danger alert-dismissible fade show mb-1" role="alert"><strong><span class="bi bi-info-circle"></span></strong> Mot de passe pas assez sécurisé !<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                        <?php endif; ?>
                     <div class="row justify-content-center d-flex align-items-center ">
                         <div class="col-lg-6 d-md-block d-none p-5 text-center">
                             <img src="<?= assets('img/imglogin.svg') ?>" class="img-fluid" alt="login img">
@@ -20,21 +27,21 @@
                                 </a>
                                 <div class="hr-label text-center"><span clas="hr-label_text">or</span></div>
                             </div>
-                            <form class="mt-3" method="post">
+                            <form action="/app/user/signin" class="mt-3" method="post" class="needs-validation" novalidate id="signin-form">
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label text-muted">Email</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="email" class="form-label text-muted">Email</label>
+                                    <input name="email" type="email" class="form-control" id="email" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label text-muted">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <label for="password" class="form-label text-muted">Password</label>
+                                    <input name="password" type="password" class="form-control" id="password" required>
                                 </div>
                                 <div class="justify-content-between align-items-center d-flex mb-3">
                                     <div class=" form-check mt-2">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Remenber me</label>
+                                        <input name="remember" type="checkbox" class="form-check-input" id="remenber">
+                                        <label class="form-check-label" for="remenber">Remenber me</label>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                    <button type="submit" id="submit-form" class="btn btn-primary">Sign in</button>
                                 </div>
                             </form>
                             <a href="#" class="">Forgot your password?</a>
@@ -45,3 +52,18 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    (() => {
+        const form = document.getElementById('signin-form');
+
+        $("#submit-form").click(function(){
+            if (!form.checkValidity() ) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        });
+    })()
+</script>

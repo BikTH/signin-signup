@@ -63,9 +63,15 @@ $route['backoffice/(:any)/(:any)'] = 'dashboard/$1/$2';
 $route['backoffice/(:any)/(:any)/(:any)'] = 'dashboard/$1/$2/$3';
 
 $route['app/(:any)'] = 'website/call/$1';
+$route['app/(:any)/(:any)'] = 'website/call/$1/$2';
 $route['showimg/(:any)'] = 'website/getimage/$1';
 
 $route['(:any)'] = 'website/routepage/$1';
 $route['(:any)/(:any)'] = 'website/routepage/$1/$2';
 $route['(:any)/(:any)/(:any)'] = 'website/routepage/$1/$2/$3';
+
+$route['request'] = 'website/index';
+$route['request/(:any)'] = 'website/$1';
+$route['request/(:any)/(:any)'] = 'website/$1/$2';
+$route['request/(:any)/(:any)/(:any)'] = 'website/$1/$2/$3';
 

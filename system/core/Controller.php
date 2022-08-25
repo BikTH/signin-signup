@@ -67,7 +67,7 @@ class CI_Controller {
 
 
 
-class Flamarya extends CI_Controller{
+class  Login   extends CI_Controller{
 	
 	public $defaultLanguage = 'fr';
 	public $language = null;
