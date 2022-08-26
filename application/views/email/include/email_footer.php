@@ -5,7 +5,7 @@
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 60%; min-width: 330px; margin: auto">
         <tr>
             <td class="content-block" colspan="6">
-                <span class="apple-link">&copy;<?php echo date("Y"); ?> MARY FUNERAL SERVICES</span>
+                <span class="apple-link">&copy;<?php echo date("Y"); ?>SIGNIN -  SIGNUP</span>
             </td>
         </tr>
     </table>

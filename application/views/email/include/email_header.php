@@ -367,7 +367,7 @@
                         <thead>
                             <tr style="text-align: center">
                                 <td>
-                                    <div style="margin: 24px 0px"><img src="<?= base_url(); ?>public/assets/img/brand/letter-logo.svg" height="64" alt="" /></div>
+                                    <div style="margin: 24px 0px"><img src="<?= base_url(); ?>public/favicon.png" height="64" alt="" /></div>
                                 </td>
                             </tr>
                         </thead>

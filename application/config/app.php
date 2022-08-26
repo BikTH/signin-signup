@@ -2,12 +2,19 @@
 
 $config["app"] = "signin";
 
+$config["app_email"] = "thierrybikoko8@gmail.com";
 
 
 
 $config['base_url'] = 'https://oxt-log-reg.herokuapp.com/';
 //$config['base_url'] = 'https://signin.dev/';
 $config["default_timezone"] = "Africa/Douala";
+
+/** EMAIL PREFERENCES **/
+
+$config['protocol'] = 'sendmail';
+
+
 
 
 
@@ -31,10 +38,10 @@ $config["support_whatsapp"] = "https://wa.me/237670505817";
 
 /* DATABASE INFOS */
 
-$config["database"] = "sql5515006";
-$config["host"] = "sql5.freemysqlhosting.net";
-$config["username"] = "sql5515006";
-$config["password"] = "9WE3ImQwq8";
+$config["database"] = "openxtech";
+$config["host"] = "localhost";
+$config["username"] = "oxt";
+$config["password"] = "HelloWorld";
 
 
 

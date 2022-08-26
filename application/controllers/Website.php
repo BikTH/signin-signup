@@ -218,18 +218,18 @@ class Website extends Login {
 
 	public function login($email, $password) {
 		$this->session->unset_userdata('user');
+		$this->Base->updateData(array("lastseen"=> now(),"online"=> false), array("id"=> $this->user->id), "users");
 		$user = $this->Base->getthis('users', array("email"=> $email, "password"=> $password));
 		if ($user){
 			$this->session->set_userdata( array("user"=> $user ) );
 			$user = ( object) $this->session->userdata("user"); 
 			$this->userinfo = ( object ) $this->session->userdata('user');
-			$this->Base->updateData(array("lastseen"=> now()), array("id"=> $this->user->id), "users");
+			$this->Base->updateData(array("online"=> true), array("id"=> $this->user->id), "users");
 			redirect("/main");
 			return true;
 		}else {
 			return false;
 		}
-
 	}
 
 	public function error_redirect($error, $redirect = ''){
@@ -241,6 +241,51 @@ class Website extends Login {
 		if (!preg_match_all('$\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$', $password))
 			return FALSE;
 		return TRUE;
+	}
+
+	public function reset_password(){
+
+		if(filter_var(_post('email'), FILTER_VALIDATE_EMAIL)){
+
+			$test = $this->Base->getthis('users', array('email'=>_post('email')));
+
+			if($test){
+
+				$token = $this->codegen();
+				$expDate = date("Y-m-d H:i:s", $this->format_exp_date());
+				
+				$data = array("uid"=> $this->get_uid(),
+							"user"=> $test->id,
+							"reseToken"=> $token,
+							"expDate"=> $expDate,
+							"status"=> true,
+							"dateof"=> now() );
+
+				$datatoken['token'] = $token;
+
+				$html = $this->email_template("resetpass_email", $datatoken);
+		
+				$send = $this->sendmail($html, "RESET PASSWORD", _post('email'));
+				if( !$send ){
+					$this->Base->insertdata("events", $data);
+					$this->alert->set("mail_sent", true);
+					
+				}else{$this->error_redirect('no-email', "resetPassword" );}
+				redirect("/resetPassword");
+
+
+			}else{$this->error_redirect('no-email', "resetPassword" );}
+		}else{$this->error_redirect('no-email', "resetPassword" );}
+		
+	}
+
+	public function codegen(){
+		$code = strtoupper(substr(md5(sha1($this->get_uid())), rand(0,5),6));
+		return $code;
+	}
+
+	public function format_exp_date(){
+		return mktime(date("H"), date("i")+5, date("s"), date("m") ,date("d"), date("Y"));
 	}
 
 
